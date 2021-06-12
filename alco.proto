@@ -1,0 +1,29 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.alco.CaregiverResultPushing";
+option java_outer_classname = "AlcoProto";
+option objc_class_prefix = "HLW";
+
+package alco;
+
+// The greeting service definition.
+service CaregiverResult {
+  // Sends a greeting
+  rpc push_result (CaregiverResultPushingAction) returns (CaregiverResultPushingResponse) {}
+}
+
+// The request message containing the user's name.
+message CaregiverResultPushingAction {
+  bytes image = 1;
+  string pushing_mode = 2;
+  string delivery_time = 3;
+  string detected_time = 4;
+  int32 detected_value = 5;
+}
+
+// The response message containing the greetings
+message CaregiverResultPushingResponse {
+  int32 pushing_status = 1;
+}

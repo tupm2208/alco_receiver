@@ -1,0 +1,6 @@
+.alco_server.py.swo
+.alco_server.py.swp
+ALCO_ABR
+*__pycache__*
+env_py3.6
+src
